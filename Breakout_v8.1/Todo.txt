@@ -1,0 +1,10 @@
+
+    When the ball collides with the paddle, use the reflection technique discussed in this blog post: link (Links to an external site.)Links to an external site.
+
+ 
+    Every time a brick is hit, a tasteful explosion of particles occurs.  The explosion happens by having particles take up the same space (surface area) as the brick and then explode out based upon their position relative to the center.  Alternatively, the explosion could be the particles falling down, with a stickiness based upon their relative position on the brick (higher in the brick, the stickier).
+    
+  
+
+ Provide an option in the High Score display to reset the scores.
+	
