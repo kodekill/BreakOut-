@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  	<meta charset="utf-8">
+			<link rel="stylesheet" type="text/css" href="style.css">  
+      <header>
+        <h1>Break Out 20XX</h1>
+      </header>
+	</head>
+	
+	<script src="js/ball.js"></script>
+	<script src="js/bricks.js"></script>
+	<script src="js/keyboard.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/paddle.js"></script>
+	<script src="js/player_ui.js"></script>
+	<script src="js/savegame.js"></script>
+
+  
+  <body onload="openNav();">
+<!--		########################	Menu Button		###################	-->
+		<div id="constantOverlay" title="Open Menu" class="alwaysOn">
+			<div class="menu_icon"> 
+				<a href="#" value="Menu" title="Open Menu" onclick="openNav();">&#9776;</a>
+			</div>
+		</div>
+
+		<div id="myNav" class="overlay">
+			<a href="javascript:void(0)" title="Close Menu" class="closebtn" onclick="closeNav()">&#x2612;</a>
+
+			<div class="menu_icon"> 
+				<a href="#" value="Menu" title="Open Menu" onclick="openNav()">&#9776;</a>
+			</div>
+
+			<div class="overlay-content">
+				<a href="#" value="New Game" onclick="loadGame()">New Game</a>
+				<a href="#" value="Options" onclick="options()">Options</a>
+				<a href="#" value="High Scores" onclick="scores()">High Scores</a>
+				<a href="#" value="Credits" onclick="gameCredits()">Credits</a>
+			</div>
+
+		</div>
+<!--		#########################Delete Button for High Score menu###################	-->
+		<div id="deleteScores" title="Deletes High Scores" class="highscoresmenu">
+			<div class="menu_icon"> 
+				<a href="#" value="Menu" onclick="resetScores();">&#x267A;</a>
+			</div>
+		</div>
+		
+
+		<div class = "center_canvas">
+			<canvas id="myCanvas" width="900" height="600" style="border:1px solid #d3d3d3; background-image: url('./pics/space.jpg');">
+				Your browser does not support the canvas element.
+			</canvas>
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById("myNav").style.display = "block";
+				document.getElementById("constantOverlay").style.display = "block";
+				document.getElementById("deleteScores").style.display = "none";
+			}
+
+			function closeNav() {
+				document.getElementById("myNav").style.display = "none";
+				document.getElementById("deleteScores").style.display = "none";
+				
+			}
+
+			function loadGame() {
+				document.getElementById("myNav").style.display = "none";
+				document.getElementById("deleteScores").style.display = "none";
+				loadNewGame();
+			}
+
+				function options() {
+				document.getElementById("myNav").style.display = "none";
+				document.getElementById("deleteScores").style.display = "none";
+				loadOptions();
+			}
+
+			function scores() {
+				document.getElementById("myNav").style.display = "none";
+				document.getElementById("deleteScores").style.display = "block";
+				loadScores();
+			}
+
+			function gameCredits() {
+				document.getElementById("myNav").style.display = "none";
+				document.getElementById("deleteScores").style.display = "none";
+				loadCredits();
+			}
+		</script>
+		
+  </body>
+
+  <footer>
+    Created for CS5410
+  </footer>
+</html>
